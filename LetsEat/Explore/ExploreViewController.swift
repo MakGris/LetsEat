@@ -9,6 +9,15 @@ import UIKit
 
 class ExploreViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet var collectionView: UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
         return headerView
@@ -24,13 +33,6 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     
-    @IBOutlet var collectionView: UICollectionView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
 
     @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
