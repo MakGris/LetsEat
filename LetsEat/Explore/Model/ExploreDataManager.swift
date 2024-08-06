@@ -9,6 +9,14 @@ import Foundation
 
 class ExploreDataManager {
     
+    private var exploreItems: [ExploreItem] = []
+    
+    func fetch() {
+        for data in loadData() {
+            exploreItems.append(ExploreItem(dict: data))
+        }
+    }
+    
     private func loadData()-> [[String:String]] {
         let decoder = PropertyListDecoder()
         if let path = Bundle.main.path(forResource: "ExploreData", ofType: "plist"),
